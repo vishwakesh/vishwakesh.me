@@ -1,0 +1,1 @@
+Put idol photos here, named by id, e.g. linus-torvalds.jpg
