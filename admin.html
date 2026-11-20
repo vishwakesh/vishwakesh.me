@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Blog Admin</title>
+<style>
+:root{--deep:#163020;--leaf:#3E7B4F;--sage:#A8C3A0;--mint:#DDEBD9;--cream:#F6F8F2;--lime:#B7E36B}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Manrope,system-ui,sans-serif;background:radial-gradient(circle at 20% 0,#1F3D2B,var(--deep) 70%);color:var(--cream);padding:1rem}
+main{max-width:760px;margin:0 auto}h1{font-weight:300;font-size:2rem}h1 span{color:var(--lime)}
+.card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:1.1rem;margin:1rem 0;backdrop-filter:blur(12px)}
+input,textarea{width:100%;padding:.8rem 1rem;margin:.35rem 0 .8rem;border-radius:14px;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.3);color:var(--cream);font:inherit}
+textarea{min-height:320px;resize:vertical}label{font-size:.82rem;color:var(--sage)}
+button{font:inherit;cursor:pointer;border-radius:999px;padding:.6rem 1.2rem;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:var(--cream)}
+button.p{background:var(--lime);color:var(--deep);font-weight:600;border:0}button.d{color:#ff9d9d}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}.item{display:flex;justify-content:space-between;gap:.6rem;align-items:center;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.tag{font-size:.7rem;padding:.1rem .6rem;border-radius:99px;border:1px solid var(--lime);color:var(--lime)}#msg{color:var(--lime);min-height:1.4em}
+</style></head><body><main>
+<h1>Blog <span>admin.</span></h1><p id="msg"></p>
+<section id="login" class="card"><label>Admin token</label><input id="tok" type="password" autocomplete="off"><button class="p" id="go">Unlock</button></section>
+<section id="list" class="card" hidden><div class="row"><button class="p" id="new">+ New post</button><button id="out">Lock</button></div><div id="items"></div></section>
+<section id="edit" class="card" hidden>
+<label>Title</label><input id="title" maxlength="140">
+<label>Excerpt (shown on the card)</label><input id="excerpt" maxlength="300">
+<label>Tags (comma separated)</label><input id="tags">
+<label>Cover image URL (https only, optional)</label><input id="cover">
+<label>Content (Markdown)</label><textarea id="content"></textarea>
+<label><input id="pub" type="checkbox" style="width:auto;margin-right:.5rem">Published</label>
+<div class="row" style="margin-top:1rem"><button class="p" id="save">Save</button><button id="cancel">Back</button><button class="d" id="del" hidden>Delete</button></div>
+</section></main>
+<script>
+const API='https://YOUR-API.onrender.com'; // <- your Render URL
+const $=i=>document.getElementById(i);let tok=sessionStorage.getItem('vk_tok')||'',cur=null;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const say=t=>$('msg').textContent=t||'';
+const show=n=>['login','list','edit'].forEach(x=>$(x).hidden=x!==n);
+async function api(p,o={}){
+  const r=await fetch(API+'/api/admin'+p,{...o,headers:{'Content-Type':'application/json',Authorization:'Bearer '+tok}});
+  if(r.status===401){sessionStorage.removeItem('vk_tok');tok='';show('login');throw new Error('Wrong token');}
+  if(!r.ok)throw new Error((await r.json().catch(()=>({}))).error||r.status);
+  return r.status===204?null:r.json();}
+async function refresh(){say('Loading (server may take ~30s to wake)…');
+  try{const ps=await api('/posts');say('');show('list');
+    $('items').innerHTML=ps.map(p=>`<div class="item"><span>${esc(p.title)} ${p.published?'<span class="tag">live</span>':'<span class="tag" style="opacity:.6">draft</span>'}</span><button data-id="${p._id}">Edit</button></div>`).join('')||'<p>No posts yet.</p>';
+  }catch(e){say(e.message)}}
+function fill(p){cur=p;$('title').value=p?.title||'';$('excerpt').value=p?.excerpt||'';$('tags').value=(p?.tags||[]).join(', ');
+  $('cover').value=p?.cover||'';$('content').value=p?.content||'';$('pub').checked=!!p?.published;$('del').hidden=!p;show('edit');}
+$('go').onclick=()=>{tok=$('tok').value.trim();sessionStorage.setItem('vk_tok',tok);$('tok').value='';refresh();};
+$('out').onclick=()=>{sessionStorage.removeItem('vk_tok');tok='';show('login');};
+$('new').onclick=()=>fill(null);$('cancel').onclick=refresh;
+$('items').onclick=async e=>{const id=e.target.dataset.id;if(!id)return;try{fill(await api('/posts/'+id));}catch(x){say(x.message)}};
+$('save').onclick=async()=>{const b={title:$('title').value,excerpt:$('excerpt').value,content:$('content').value,cover:$('cover').value.trim(),
+  published:$('pub').checked,tags:$('tags').value.split(',').map(t=>t.trim()).filter(Boolean)};
+  try{say('Saving…');await api(cur?'/posts/'+cur._id:'/posts',{method:cur?'PUT':'POST',body:JSON.stringify(b)});localStorage.removeItem('vk_blog_posts');await refresh();say('Saved ✓');}catch(e){say(e.message)}};
+$('del').onclick=async()=>{if(!confirm('Delete this post?'))return;try{await api('/posts/'+cur._id,{method:'DELETE'});await refresh();}catch(e){say(e.message)}};
+if(tok)refresh();
+</script></body></html>

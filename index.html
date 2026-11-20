@@ -2159,6 +2159,40 @@ main.container {
   .idl-post .idl-media{min-height:420px}
   .idl-cta{flex-direction:row;align-items:center;justify-content:space-between}
 }
+
+/* ==========================================================================
+   BLOG PAGE
+   ========================================================================== */
+.bl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;margin-top:1.5rem}
+.bl-card{display:flex;flex-direction:column;overflow:hidden;text-align:left;cursor:pointer;color:var(--cream);padding:0}
+.bl-card:hover{transform:translateY(-6px);border-color:var(--glass-border-highlight)}
+.bl-card:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.bl-cover{height:150px;background:linear-gradient(160deg,var(--leaf),var(--deep));overflow:hidden}
+.bl-cover img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease-smooth)}
+.bl-card:hover .bl-cover img{transform:scale(1.05)}
+.bl-body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.bl-date{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
+.bl-body h3{font-size:1.2rem;font-weight:500;line-height:1.3}
+.bl-body p{color:var(--mint);opacity:.9;font-size:.92rem;flex:1}
+.bl-skel{height:260px;border-radius:24px;background:linear-gradient(100deg,rgba(255,255,255,.04) 30%,rgba(255,255,255,.12) 50%,rgba(255,255,255,.04) 70%);background-size:200% 100%;animation:blShimmer 1.4s linear infinite}
+@keyframes blShimmer{to{background-position:-200% 0}}
+.bl-post{padding:1.4rem;max-width:760px;margin:0 auto}
+.bl-post h1{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:400;letter-spacing:-.02em;line-height:1.15;margin:1rem 0 .5rem}
+.bl-meta{color:var(--sage);font-size:.85rem;margin-bottom:1.2rem}
+.bl-hero{width:100%;max-height:340px;object-fit:cover;border-radius:18px;margin-bottom:1.2rem}
+.bl-prose{color:var(--mint);line-height:1.8;overflow-wrap:anywhere}
+.bl-prose>*+*{margin-top:1rem}
+.bl-prose h2,.bl-prose h3{color:var(--cream);font-weight:500;margin-top:1.8rem}
+.bl-prose a{color:var(--lime);text-decoration:underline;text-underline-offset:3px}
+.bl-prose ul,.bl-prose ol{padding-left:1.4rem;list-style:revert}
+.bl-prose blockquote{border-left:3px solid var(--lime);padding-left:1rem;color:var(--lime);font-style:italic}
+.bl-prose img{max-width:100%;border-radius:14px}
+.bl-prose code{background:rgba(0,0,0,.35);padding:.1rem .4rem;border-radius:6px;font-size:.9em}
+.bl-prose pre{background:rgba(0,0,0,.4);padding:1rem;border-radius:14px;overflow-x:auto}
+.bl-prose pre code{background:none;padding:0}
+
+.project-thumb{position:relative}
+.project-thumb .project-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 </style>
 </head>
 <body data-page="home">
@@ -2624,6 +2658,20 @@ main.container {
       <article class="glass-card idl-post" id="idlPost" hidden></article>
     </div>
 
+    <!-- ==================== VIEW: BLOG ==================== -->
+    <div id="view-blog" class="page-view page-enter" hidden>
+      <div id="blList">
+        <section class="page-intro" aria-labelledby="blogHeading">
+          <p class="eyebrow">NOTES &amp; STORIES</p>
+          <h1 id="blogHeading" class="page-title">Things I <span class="text-lime">write</span><span class="lime-dot">.</span></h1>
+          <p class="page-subtitle">Thoughts on building, learning and the things that keep me going.</p>
+        </section>
+        <div class="bl-grid" id="blGrid"></div>
+        <div class="glass-card idl-msg" id="blMsg" hidden></div>
+      </div>
+      <article class="glass-card bl-post" id="blPost" hidden></article>
+    </div>
+
     <!-- ==================== VIEW 4: CONTACT ==================== -->
     <div id="view-contact" class="page-view page-enter" hidden>
       <section class="contact-wrapper" aria-labelledby="contactHeading">
@@ -2859,6 +2907,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "world-of-wonder",
+    image: "images/projects/world-of-wonder.jpg",
     title: "World of Wonder",
     year: '2026',
     shortDesc: "Discover the world’s hidden wonders",
@@ -2887,6 +2936,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "spytown",
+    image: "images/projects/spytown.jpg",
     title: "SPYTOWN.FUN",
     year: '2026',
     shortDesc: "Anime-first AI video clipping",
@@ -2915,6 +2965,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "quasar",
+    image: "images/projects/quasar.jpg",
     title: "QUASAR",
     year: '2026',
     shortDesc: "AI-powered Discord management",
@@ -2974,6 +3025,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "nodebase",
+    image: "images/projects/nodebase.jpg",
     title: "NODEBASE",
     year: '2026',
     shortDesc: "Self-hosted tools for creators",
@@ -2995,6 +3047,7 @@ const PROJECTS_DATA = [
   },
   {
     id: "quxo",
+    image: "images/projects/quxo.jpg",
     title: "Quxo",
     year: '2026',
     shortDesc: "Editing and AI-coding services",
@@ -3050,7 +3103,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/qfSIOe3vC7G2ASbhahFV/image.jpg",
+    image: "images/anime/my-hero-academia.jpg",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3059,7 +3112,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/qZgUVZ5js1XXdlKQpjja/image.jpg",
+    image: "images/anime/assassination-classroom.jpg",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   },
@@ -3068,7 +3121,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Anime: watched up to the Infinity Castle arc. Manga: completed the Sunrise Countdown arc.",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/PvfYAIvrWiYwKB97kYYU/image.jpg",
+    image: "images/anime/demon-slayer.jpg",
     coverGradient: "linear-gradient(135deg, #264B35 0%, #3E7B4F 60%, #112419 100%)",
     themeColor: '#B7E36B'
   },
@@ -3077,7 +3130,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/KWFPnYfuSqswcWeeN3Sz/image.jpg",
+    image: "images/anime/attack-on-titan.jpg",
     coverGradient: "linear-gradient(135deg, #3E5C3A 0%, #6B7E52 55%, #1E3524 100%)",
     themeColor: '#B7E36B'
   },
@@ -3086,7 +3139,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Completed",
     note: "Anime: watched both seasons. Manga: read through the storyline involving Sung Jinwoo's son. Some details are forgotten.",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/NKGoeB6SIFXroElNqSPW/image.jpg",
+    image: "images/anime/solo-leveling.jpg",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3095,7 +3148,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 3, Episode 5",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/h8kZAbQHepxylhg7JcWJ/image.jpg",
+    image: "images/anime/spy-x-family.jpg",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   },
@@ -3104,7 +3157,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 3, Episode 1",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/YJhiMow9Brz55YQFymmy/image.jpg",
+    image: "images/anime/mushoku-tensei.jpg",
     coverGradient: "linear-gradient(135deg, #264B35 0%, #3E7B4F 60%, #112419 100%)",
     themeColor: '#B7E36B'
   },
@@ -3113,7 +3166,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Approximately Episode 30–40 (uncertain)",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/BRI69KOp7ETaBRjRxGsv/image.jpg",
+    image: "images/anime/hunter-x-hunter.jpg",
     coverGradient: "linear-gradient(135deg, #3E5C3A 0%, #6B7E52 55%, #1E3524 100%)",
     themeColor: '#B7E36B'
   },
@@ -3122,7 +3175,7 @@ const ANIME_DATA = [
     type: "Movie",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/xaTONi0joRFk2hYAU26e/image.jpg",
+    image: "images/anime/your-name.jpg",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3131,7 +3184,7 @@ const ANIME_DATA = [
     type: "Movie",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/xjt2Afa2UJoxmKEX1irk/image.jpg",
+    image: "images/anime/weathering-with-you.jpg",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   },
@@ -3140,7 +3193,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 1 completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/RSm84TXyYMr6t64ROHTK/image.jpg",
+    image: "images/anime/vinland-saga.jpg",
     coverGradient: "linear-gradient(135deg, #264B35 0%, #3E7B4F 60%, #112419 100%)",
     themeColor: '#B7E36B'
   },
@@ -3149,7 +3202,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 1 in progress",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/LDIpcaHmbMf1fVv7I4Zm/image.jpg",
+    image: "images/anime/haikyu.jpg",
     coverGradient: "linear-gradient(135deg, #3E5C3A 0%, #6B7E52 55%, #1E3524 100%)",
     themeColor: '#B7E36B'
   },
@@ -3158,7 +3211,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 2 completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/mVZQa4WUvU6hjADfCMFO/image.jpg",
+    image: "images/anime/classroom-of-the-elite.jpg",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3167,7 +3220,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Episode 24 (Muse India)",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/s4ClpcZ6wXv7Bc5TTuN3/image.jpg",
+    image: "images/anime/campfire-cooking-in-another-world.jpg",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   }
@@ -3181,11 +3234,12 @@ const PAGE_TITLES = {
   works: 'Selected Works — Vishwakesh',
   anime: 'Stories I Love — Vishwakesh',
   idols: 'Who I Idolize — Vishwakesh',
+  blog: 'Blog — Vishwakesh',
   contact: 'Say Hi — Vishwakesh'
 };
 
 function switchView(routeId, pushHash = true) {
-  const validRoutes = ['home', 'works', 'anime', 'idols', 'contact'];
+  const validRoutes = ['home', 'works', 'anime', 'idols', 'blog', 'contact'];
   const targetRoute = validRoutes.includes(routeId) ? routeId : 'home';
 
   document.body.dataset.page = targetRoute;
@@ -3238,6 +3292,7 @@ function initNavigation() {
     { id: 'works', label: 'Works' },
     { id: 'anime', label: 'Anime' },
     { id: 'idols', label: 'Idols' },
+    { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -3423,6 +3478,7 @@ function renderProjects(filter = 'All') {
       >
         <div class="project-thumb" aria-hidden="true">
           ${project.thumbSvg}
+          ${project.image ? `<img class="project-img" src="${project.image}" alt="" loading="lazy" onerror="this.remove()">` : ''}
         </div>
         <div class="project-body">
           <div class="project-meta-top">
@@ -4279,6 +4335,98 @@ document.addEventListener('DOMContentLoaded', () => {
   const maybeLoad = () => { if (!view.hidden && !started) load(); };
   new MutationObserver(maybeLoad).observe(view, { attributes: true, attributeFilter: ['hidden'] });
   maybeLoad();
+})();
+
+/* ---------- Blog page: posts come from the Render API (MongoDB) ---------- */
+(function initBlogPage() {
+  const API = 'https://YOUR-API.onrender.com'; // <- your Render URL
+  const view = document.getElementById('view-blog');
+  if (!view) return;
+  const $ = (id) => document.getElementById(id);
+  const listEl = $('blList'), postEl = $('blPost'), gridEl = $('blGrid'), msgEl = $('blMsg');
+  const KEY = 'vk_blog_posts';
+  let started = false, libs = null;
+
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const safeUrl = (u) => (/^https:\/\//i.test(u || '') ? esc(u) : '');
+  const fmt = (d) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  const api = async (path) => {
+    const c = new AbortController(), t = setTimeout(() => c.abort(), 60000);
+    try {
+      const r = await fetch(API + path, { signal: c.signal });
+      if (!r.ok) throw new Error(r.status);
+      return await r.json();
+    } finally { clearTimeout(t); }
+  };
+  const loadScript = (src) => new Promise((ok, no) => {
+    const s = document.createElement('script');
+    s.src = src; s.onload = ok; s.onerror = no; document.head.appendChild(s);
+  });
+  const loadLibs = () => libs || (libs = Promise.all([
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js'),
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js')
+  ]).then(() => {
+    DOMPurify.addHook('afterSanitizeAttributes', (n) => {
+      if (n.tagName === 'A') { n.setAttribute('target', '_blank'); n.setAttribute('rel', 'noopener noreferrer'); }
+    });
+  }));
+
+  function renderList(posts) {
+    msgEl.hidden = true;
+    if (!posts.length) { gridEl.innerHTML = ''; msgEl.hidden = false; msgEl.textContent = 'No posts yet. First one is coming soon.'; return; }
+    gridEl.innerHTML = posts.map((p, n) => `<button type="button" class="glass-card bl-card idl-in" style="--i:${n}" data-slug="${esc(p.slug)}" aria-label="Read ${esc(p.title)}">
+      <div class="bl-cover">${safeUrl(p.cover) ? `<img src="${safeUrl(p.cover)}" alt="" loading="lazy" onerror="this.remove()">` : ''}</div>
+      <div class="bl-body"><span class="bl-date">${fmt(p.createdAt)}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt)}</p>
+      <div class="pill-group">${(p.tags || []).slice(0, 3).map((t) => `<span class="pill">${esc(t)}</span>`).join('')}</div></div></button>`).join('');
+  }
+
+  async function load() {
+    started = true;
+    let cached = null;
+    try { cached = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+    if (cached && cached.length) renderList(cached);
+    else gridEl.innerHTML = '<div class="bl-skel"></div><div class="bl-skel"></div><div class="bl-skel"></div>';
+    try {
+      const posts = await api('/api/posts');
+      try { localStorage.setItem(KEY, JSON.stringify(posts)); } catch (e) {}
+      renderList(posts);
+    } catch (e) {
+      started = false;
+      if (!cached || !cached.length) { gridEl.innerHTML = ''; msgEl.hidden = false; msgEl.textContent = 'The blog server is waking up or unreachable. Please try again in a minute.'; }
+    }
+  }
+
+  async function open(slug) {
+    postEl.hidden = false; listEl.hidden = true;
+    postEl.innerHTML = '<div class="bl-skel"></div>';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      const [p] = await Promise.all([api('/api/posts/' + encodeURIComponent(slug)), loadLibs()]);
+      const html = DOMPurify.sanitize(marked.parse(p.content));
+      const mins = Math.max(1, Math.round(p.content.split(/\s+/).length / 200));
+      postEl.innerHTML = `<button type="button" class="btn btn-glass btn-sm" data-bl-back>← Back to Blog</button>
+        <h1>${esc(p.title)}</h1><p class="bl-meta">${fmt(p.createdAt)} · ${mins} min read</p>
+        <div class="pill-group" style="margin-bottom:1.2rem">${(p.tags || []).map((t) => `<span class="pill">${esc(t)}</span>`).join('')}</div>
+        ${safeUrl(p.cover) ? `<img class="bl-hero" src="${safeUrl(p.cover)}" alt="" onerror="this.remove()">` : ''}
+        <div class="bl-prose">${html}</div>
+        <div style="margin-top:2rem"><button type="button" class="btn btn-glass btn-sm" data-bl-back>← Back to Blog</button></div>`;
+      postEl.classList.remove('idl-in'); void postEl.offsetWidth; postEl.classList.add('idl-in');
+    } catch (e) {
+      postEl.innerHTML = '<button type="button" class="btn btn-glass btn-sm" data-bl-back>← Back to Blog</button><p style="margin-top:1rem;color:var(--mint)">Could not load this post. Please try again.</p>';
+    }
+  }
+  const close = () => { postEl.hidden = true; listEl.hidden = false; window.scrollTo({ top: 0, behavior: 'smooth' }); };
+
+  view.addEventListener('click', (e) => {
+    const t = e.target.closest('[data-slug],[data-bl-back]');
+    if (!t) return;
+    t.dataset.slug ? open(t.dataset.slug) : close();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !view.hidden && !postEl.hidden) close(); });
+  const maybe = () => { if (!view.hidden && !started) load(); };
+  new MutationObserver(maybe).observe(view, { attributes: true, attributeFilter: ['hidden'] });
+  maybe();
 })();
 </script>
 </body>
