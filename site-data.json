@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "1.0.0",
+  "site": "vishwakesh.me",
+  "lastUpdated": "2026-11-20",
+  "animeWatchlist": [
+    {
+      "id": "my-hero-academia",
+      "title": "My Hero Academia",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/qfSIOe3vC7G2ASbhahFV",
+      "watchProgress": { "status": "completed", "displayText": "Completed" }
+    },
+    {
+      "id": "assassination-classroom",
+      "title": "Assassination Classroom",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/qZgUVZ5js1XXdlKQpjja",
+      "watchProgress": { "status": "completed", "displayText": "Completed" }
+    },
+    {
+      "id": "demon-slayer",
+      "title": "Demon Slayer",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/PvfYAIvrWiYwKB97kYYU",
+      "watchProgress": {
+        "status": "in_progress",
+        "displayText": "Anime watched up to the Infinity Castle arc; manga read through the Sunrise Countdown arc."
+      }
+    },
+    {
+      "id": "attack-on-titan",
+      "title": "Attack on Titan",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/KWFPnYfuSqswcWeeN3Sz",
+      "watchProgress": { "status": "completed", "displayText": "Completed" }
+    },
+    {
+      "id": "solo-leveling",
+      "title": "Solo Leveling",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/NKGoeB6SIFXroElNqSPW",
+      "watchProgress": {
+        "status": "in_progress",
+        "displayText": "Watched 2 anime seasons; manga read through the story of Sung Jinwoo's son. Details are a little hazy."
+      }
+    },
+    {
+      "id": "spy-x-family",
+      "title": "Spy x Family",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/h8kZAbQHepxylhg7JcWJ",
+      "watchProgress": { "status": "in_progress", "displayText": "Season 3, Episode 5" },
+      "season": 3,
+      "episode": 5
+    },
+    {
+      "id": "mushoku-tensei",
+      "title": "Mushoku Tensei: Jobless Reincarnation",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/YJhiMow9Brz55YQFymmy",
+      "watchProgress": { "status": "in_progress", "displayText": "Season 3, Episode 1" },
+      "season": 3,
+      "episode": 1
+    },
+    {
+      "id": "hunter-x-hunter",
+      "title": "Hunter x Hunter",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/BRI69KOp7ETaBRjRxGsv",
+      "watchProgress": {
+        "status": "in_progress",
+        "displayText": "Around Episode 30–40 (exact episode not confirmed)"
+      }
+    },
+    {
+      "id": "your-name",
+      "title": "Your Name",
+      "type": "movie",
+      "imageUrl": "https://kommodo.ai/i/xaTONi0joRFk2hYAU26e",
+      "watchProgress": { "status": "completed", "displayText": "Completed" }
+    },
+    {
+      "id": "weathering-with-you",
+      "title": "Weathering with You",
+      "type": "movie",
+      "imageUrl": "https://kommodo.ai/i/xjt2Afa2UJoxmKEX1irk",
+      "watchProgress": { "status": "completed", "displayText": "Completed" }
+    },
+    {
+      "id": "vinland-saga",
+      "title": "Vinland Saga",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/RSm84TXyYMr6t64ROHTK",
+      "watchProgress": { "status": "in_progress", "displayText": "Season 1 completed" },
+      "season": 1,
+      "seasonStatus": "completed"
+    },
+    {
+      "id": "haikyu",
+      "title": "Haikyu!!",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/LDIpcaHmbMf1fVv7I4Zm",
+      "watchProgress": { "status": "in_progress", "displayText": "Season 1 started but not finished" },
+      "season": 1
+    },
+    {
+      "id": "classroom-of-the-elite",
+      "title": "Classroom of the Elite",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/mVZQa4WUvU6hjADfCMFO",
+      "watchProgress": { "status": "in_progress", "displayText": "Watched through Season 2" },
+      "season": 2,
+      "seasonStatus": "completed"
+    },
+    {
+      "id": "campfire-cooking-in-another-world",
+      "title": "Campfire Cooking in Another World with My Absurd Skill",
+      "type": "series",
+      "imageUrl": "https://kommodo.ai/i/s4ClpcZ6wXv7Bc5TTuN3",
+      "watchProgress": { "status": "in_progress", "displayText": "Episode 24 (Muse India)" },
+      "episode": 24,
+      "platform": "Muse India"
+    }
+  ],
+  "plannedPages": [
+    {
+      "id": "anime-blogs-and-opinions",
+      "title": "Anime Blogs &amp; Opinions",
+      "description": "Personal anime blog posts featuring my own feelings, opinions, reviews, and thoughts.",
+      "status": "planned"
+    },
+    {
+      "id": "ngl",
+      "title": "NGL",
+      "description": "An anonymous-message page.",
+      "status": "planned"
+    },
+    {
+      "id": "profession",
+      "title": "Profession",
+      "description": "A page introducing my professional interests, skills, and work.",
+      "status": "planned"
+    },
+    {
+      "id": "social-links",
+      "title": "Social Links",
+      "description": "A page collecting my social profiles and online links.",
+      "status": "planned"
+    },
+    {
+      "id": "favourite-music",
+      "title": "Favourite Music",
+      "description": "A page for my favourite music and music-streaming links.",
+      "status": "planned"
+    }
+  ],
+  "projects": [
+    {
+      "id": "nodebase",
+      "title": "Nodebase",
+      "description": "A free, open-source project.",
+      "progress": "v4.5",
+      "workStatus": "in_progress",
+      "statusText": "Currently working on it.",
+      "links": [{ "label": "GitHub", "url": "https://github.com/vishwakesh/nodebase" }],
+      "imageUrl": "https://kommodo.ai/i/5C65LAUWoobvVfkd0PtB"
+    },
+    {
+      "id": "world-of-wonder",
+      "title": "World of Wonder",
+      "description": "A project focused on discovering interesting places around the world.",
+      "progress": "Planning",
+      "workStatus": "paused",
+      "statusText": "Paused for 7 days.",
+      "pauseTimer": { "durationDays": 7, "startedAt": "2026-11-20", "endsAt": "2026-11-27" },
+      "links": [],
+      "imageUrl": "https://kommodo.ai/i/PpLXMDowsoGdW5rq8fpS"
+    },
+    {
+      "id": "spytown",
+      "title": "SPYTOWN",
+      "description": "An anime-focused video clipping project.",
+      "progress": "Waiting for investors; adding clips whenever possible.",
+      "workStatus": "completed",
+      "statusText": "Development marked as finished; currently awaiting investment and continuing to add clips.",
+      "links": [{ "label": "Website", "url": "https://spytown.fun/" }],
+      "imageUrl": "https://kommodo.ai/i/ojISnZpcWUg4InBKeAg9"
+    },
+    {
+      "id": "quasar",
+      "title": "Quasar",
+      "description": "Project details to be added.",
+      "progress": "Planning",
+      "workStatus": "offline",
+      "statusText": "Currently offline.",
+      "links": [],
+      "imageUrl": "https://kommodo.ai/i/Bq0V4qTqBnUofgIGv8YK"
+    },
+    {
+      "id": "quxo",
+      "title": "Quxo",
+      "description": "A creative and digital services project.",
+      "progress": "Finished",
+      "workStatus": "completed",
+      "statusText": "Paused until the date originally provided: 2026-01-15.",
+      "pausedUntil": "2026-01-15",
+      "links": [{ "label": "Website", "url": "https://www.quxoagency.xyz/" }],
+      "imageUrl": "https://kommodo.ai/i/4LyRTt604HPam73zJd0Q"
+    },
+    {
+      "id": "apicmc",
+      "title": "APICMC",
+      "year": null,
+      "shortDesc": "Minecraft multiplayer server.",
+      "extendedDesc": "A Minecraft multiplayer server project. Development is complete, but the project is paused because the owners could no longer cover the bills.",
+      "categories": ["Other"],
+      "tech": ["Minecraft"],
+      "progress": "Done",
+      "workStatus": "completed",
+      "statusText": "Paused because the owners could no longer cover the bills.",
+      "links": [{ "label": "Server", "url": null }],
+      "imageUrl": "https://kommodo.ai/i/E3ATrsYors7tZFmiDIKO"
+    },
+    {
+      "id": "vkmc",
+      "title": "VKMC",
+      "year": null,
+      "shortDesc": "Minecraft multiplayer server.",
+      "extendedDesc": "A Minecraft multiplayer server project that generated $500. It is currently in maintenance mode because its API credits have run out.",
+      "categories": ["Other"],
+      "tech": ["Minecraft"],
+      "progress": "$500 earned",
+      "workStatus": "maintenance",
+      "statusText": "In maintenance mode because API credits have run out.",
+      "nextMilestone": { "name": "S6", "date": "2026-12-01" },
+      "links": [{ "label": "Server", "url": null }],
+      "imageUrl": "https://kommodo.ai/i/606JNNb3WADg9bUytILY"
+    }
+  ],
+  "dataNotes": [
+    "The Quxo pause date was preserved exactly as provided. January 15, 2026 is before the lastUpdated date of November 20, 2026, so confirm whether the intended date was January 15, 2027.",
+    "The World of Wonder pause timer uses November 20, 2026 as its start date and November 27, 2026 as its end date. Adjust these values if the pause started on another day.",
+    "The zip archive mentioned for additional images was not available in this conversation. Existing image URLs have been included as imageUrl fields.",
+    "Unknown project years and server URLs are represented as null rather than fabricated values."
+  ]
+}
