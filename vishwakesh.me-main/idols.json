@@ -1,0 +1,262 @@
+{
+  "idols": [
+    {
+      "id": "izuku-midoriya",
+      "name": "Izuku Midoriya",
+      "field": "Anime",
+      "tags": [
+        "relentless",
+        "empathy",
+        "growth",
+        "courage"
+      ],
+      "cardLine": "Start before you're ready. Grow into the responsibility.",
+      "taughtMe": "Preparation matters, but action is what turns potential into progress.",
+      "quote": "Go beyond! Plus Ultra!",
+      "quoteBy": "All Might",
+      "story": "A hero-obsessed student who begins without the power he admires. Through observation, preparation, courage and compassion, he gradually grows into the responsibility of becoming a hero.",
+      "lessons": [
+        "Study what you admire instead of simply admiring it.",
+        "Use preparation to make better decisions, not to avoid taking action.",
+        "Strength means protecting others, not just proving yourself.",
+        "Never let your starting point define your potential."
+      ],
+      "image": "https://kommodo.ai/i/Sa4SNldpdDPsMyxBPW2M",
+      "imageSource": "https://kommodo.ai/i/Sa4SNldpdDPsMyxBPW2M",
+      "featured": true
+    },
+    {
+      "id": "senku-ishigami",
+      "name": "Senku Ishigami",
+      "field": "Anime",
+      "tags": [
+        "scientific thinking",
+        "curiosity",
+        "innovation",
+        "resourcefulness"
+      ],
+      "cardLine": "Turn curiosity into experiments.",
+      "taughtMe": "Break seemingly impossible goals into smaller, testable problems.",
+      "quote": "This is exhilarating.",
+      "quoteBy": "Senku Ishigami",
+      "story": "After humanity is petrified, Senku sets out to rebuild civilization through science. His determination to understand how things work and use available resources makes his journey fascinating.",
+      "lessons": [
+        "Question assumptions and investigate the evidence.",
+        "Make progress through small, consistent experiments.",
+        "Use knowledge to solve real problems.",
+        "Limited resources can encourage creative solutions.",
+        "Work with others who bring different strengths."
+      ],
+      "image": "https://kommodo.ai/i/5Xdvb04Xx1mc6Z9rsQK6",
+      "imageSource": "https://kommodo.ai/i/5Xdvb04Xx1mc6Z9rsQK6",
+      "featured": false
+    },
+    {
+      "id": "shoyo-hinata",
+      "name": "Shoyo Hinata",
+      "field": "Anime",
+      "tags": [
+        "consistency",
+        "adaptability",
+        "teamwork",
+        "determination"
+      ],
+      "cardLine": "Your limitations aren't your final definition.",
+      "taughtMe": "Talent gives you a starting point. Practice and teamwork help you grow.",
+      "quote": "The view from the top... it's a view I could never see on my own.",
+      "quoteBy": "Shoyo Hinata",
+      "story": "Hinata begins with a huge dream and limited experience. Instead of accepting his disadvantages, he keeps learning, training and adapting. His journey shows how individual ambition becomes stronger through teamwork.",
+      "lessons": [
+        "Consistent practice beats occasional motivation.",
+        "Learn from people who challenge your abilities.",
+        "Adapt when your original approach doesn't work.",
+        "Don't confuse being inexperienced with being incapable.",
+        "Great achievements rarely happen alone."
+      ],
+      "image": "https://kommodo.ai/i/PerWskIUq8p7BiqbkW85",
+      "imageSource": "https://kommodo.ai/i/PerWskIUq8p7BiqbkW85",
+      "featured": false
+    },
+    {
+      "id": "ada-lovelace",
+      "name": "Ada Lovelace",
+      "field": "Tech",
+      "tags": [
+        "imagination",
+        "mathematics",
+        "programming",
+        "vision"
+      ],
+      "cardLine": "Imagine beyond what technology can currently do.",
+      "taughtMe": "Creativity and analytical thinking become powerful when they work together.",
+      "quote": "The Analytical Engine weaves algebraical patterns just as the Jacquard loom weaves flowers and leaves.",
+      "quoteBy": "Ada Lovelace",
+      "story": "Ada Lovelace explored the possibilities of Charles Babbage's Analytical Engine. Her notes included an algorithm for the machine, widely recognised as the first published computer program. She imagined computing beyond ordinary numerical calculations.",
+      "lessons": [
+        "Don't limit imagination to existing technology.",
+        "Understand the logic behind the tools you use.",
+        "Combine creativity with analytical reasoning.",
+        "Think about what a technology could become, not only what it does today."
+      ],
+      "image": "https://kommodo.ai/i/ODATPvaM0elaAew3a4OW",
+      "imageSource": "https://kommodo.ai/i/ODATPvaM0elaAew3a4OW",
+      "featured": false
+    },
+    {
+      "id": "linus-torvalds",
+      "name": "Linus Torvalds",
+      "field": "Tech",
+      "tags": [
+        "engineering",
+        "execution",
+        "open source",
+        "problem solving"
+      ],
+      "cardLine": "Build something real. Let the work speak.",
+      "taughtMe": "Ideas become meaningful when you turn them into working systems and improve them.",
+      "quote": "Talk is cheap. Show me the code.",
+      "quoteBy": "Linus Torvalds",
+      "story": "The creator of the Linux kernel and Git. His work demonstrates how practical engineering, collaboration and continuous technical improvement can create tools used across the world.",
+      "lessons": [
+        "Prefer working prototypes over empty promises.",
+        "Understand your tools instead of blindly depending on them.",
+        "Accept technical feedback and improve your work.",
+        "Contribute to systems that others can build upon.",
+        "Be direct about technical problems without being disrespectful."
+      ],
+      "image": "https://kommodo.ai/i/nZrc7rVpsHJKg6eWtt7S",
+      "imageSource": "https://kommodo.ai/i/nZrc7rVpsHJKg6eWtt7S",
+      "featured": false
+    },
+    {
+      "id": "tim-berners-lee",
+      "name": "Tim Berners-Lee",
+      "field": "Tech",
+      "tags": [
+        "open web",
+        "innovation",
+        "collaboration",
+        "systems thinking"
+      ],
+      "cardLine": "Build technology that brings people together.",
+      "taughtMe": "The greatest technologies solve human problems, not just technical challenges.",
+      "quote": "The web is more a social creation than a technical one.",
+      "quoteBy": "Tim Berners-Lee",
+      "story": "The inventor of the World Wide Web. His work helped create an open system through which people could share information and connect across the world.",
+      "lessons": [
+        "Design technology around human needs.",
+        "Open standards enable collaboration at scale.",
+        "Think about accessibility and interoperability.",
+        "Build systems that empower other creators.",
+        "Technology should serve people."
+      ],
+      "image": "https://kommodo.ai/i/qxtAitKXtedeTphd96qH",
+      "imageSource": "https://kommodo.ai/i/qxtAitKXtedeTphd96qH",
+      "featured": false
+    },
+    {
+      "id": "paul-graham",
+      "name": "Paul Graham",
+      "field": "Business",
+      "tags": [
+        "startups",
+        "product thinking",
+        "execution",
+        "entrepreneurship"
+      ],
+      "cardLine": "Build something people genuinely need.",
+      "taughtMe": "A good startup begins with a real problem, not an impressive-sounding idea.",
+      "quote": "Look for problems, preferably problems you have yourself.",
+      "quoteBy": "Paul Graham",
+      "story": "Entrepreneur, programmer, essayist and co-founder of Y Combinator. His writing focuses on building useful products, understanding users and finding meaningful problems worth solving.",
+      "lessons": [
+        "Solve problems that actually exist.",
+        "Talk to users before making assumptions.",
+        "Build something small and improve it.",
+        "Choose problems you understand deeply.",
+        "Focus on usefulness rather than hype."
+      ],
+      "image": "https://kommodo.ai/i/sXQlTyHu4AiC0BlU89L1",
+      "imageSource": "https://kommodo.ai/i/sXQlTyHu4AiC0BlU89L1",
+      "featured": false
+    },
+    {
+      "id": "naval-ravikant",
+      "name": "Naval Ravikant",
+      "field": "Business",
+      "tags": [
+        "long-term thinking",
+        "leverage",
+        "learning",
+        "trust"
+      ],
+      "cardLine": "Think in years, not just in days.",
+      "taughtMe": "Compounding skills, knowledge, reputation and relationships can create extraordinary long-term results.",
+      "quote": "All returns in life come from compound interest in long-term games.",
+      "quoteBy": "Naval Ravikant",
+      "story": "Entrepreneur and investor, best known as a co-founder of AngelList. His ideas explore building wealth through specific knowledge, leverage, long-term thinking and trustworthy relationships.",
+      "lessons": [
+        "Invest in skills that compound over time.",
+        "Build a reputation through consistent work.",
+        "Choose collaborators based on trust and shared values.",
+        "Develop knowledge that is difficult to replace.",
+        "Avoid confusing short-term attention with lasting progress."
+      ],
+      "image": "https://kommodo.ai/i/vEKkZto8sPdhzyOswzJb",
+      "imageSource": "https://kommodo.ai/i/vEKkZto8sPdhzyOswzJb",
+      "featured": false
+    },
+    {
+      "id": "dieter-rams",
+      "name": "Dieter Rams",
+      "field": "Design",
+      "tags": [
+        "minimalism",
+        "functionality",
+        "clarity",
+        "craftsmanship"
+      ],
+      "cardLine": "Remove everything that doesn't serve a purpose.",
+      "taughtMe": "Beautiful design is not about adding more. It is about making the important things work better.",
+      "quote": "Less, but better.",
+      "quoteBy": "Dieter Rams",
+      "story": "German industrial designer known for his influential work at Braun and his ten principles of good design. His philosophy values usefulness, honesty, simplicity and attention to detail.",
+      "lessons": [
+        "Function should guide aesthetics.",
+        "Make interfaces easy to understand.",
+        "Avoid unnecessary visual complexity.",
+        "Pay attention to every detail.",
+        "Prefer lasting design over temporary trends."
+      ],
+      "image": "https://kommodo.ai/i/5MXqQjcB9Fpq5GZcdHP1",
+      "imageSource": "https://kommodo.ai/i/5MXqQjcB9Fpq5GZcdHP1",
+      "featured": false
+    },
+    {
+      "id": "massimo-vignelli",
+      "name": "Massimo Vignelli",
+      "field": "Design",
+      "tags": [
+        "typography",
+        "visual systems",
+        "discipline",
+        "consistency"
+      ],
+      "cardLine": "Make every visual decision serve the message.",
+      "taughtMe": "Strong design is a system of deliberate decisions, not a collection of decorative elements.",
+      "quote": "Good design is a matter of discipline.",
+      "quoteBy": "Massimo Vignelli",
+      "story": "Italian graphic and industrial designer whose work covered typography, branding, publishing and product design. He believed in coherent visual systems and treating design as a disciplined problem-solving process.",
+      "lessons": [
+        "Establish a consistent visual language.",
+        "Typography is a fundamental design decision.",
+        "Use grids to create structure and clarity.",
+        "Understand the problem before designing the solution.",
+        "Consistency makes a brand recognisable."
+      ],
+      "image": "https://kommodo.ai/i/Ttt0pjjhakMdkqxsvxHE",
+      "imageSource": "https://kommodo.ai/i/Ttt0pjjhakMdkqxsvxHE",
+      "featured": false
+    }
+  ]
+}

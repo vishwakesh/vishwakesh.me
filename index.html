@@ -699,108 +699,9 @@ main.container {
   opacity: 0;
 }
 
-
-/* Project logo thumbnails + status */
-.project-thumb,
-.modal-preview {
-  position: relative;
-  background: linear-gradient(145deg, rgba(62, 123, 79, 0.55), rgba(15, 33, 23, 0.85));
-}
-
-.thumb-fallback {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.thumb-fallback span {
-  font-size: 3rem;
-  font-weight: 300;
-  color: rgba(183, 227, 107, 0.7);
-}
-
-.project-logo {
-  position: absolute;
-  inset: 0;
+.portrait-svg {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transition: transform 0.5s var(--ease-smooth);
-}
-
-.project-card:hover .project-logo {
-  transform: scale(1.04);
-}
-
-.status-row:empty {
-  display: none;
-}
-
-.status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.22rem 0.65rem;
-  border-radius: 999px;
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: var(--cream);
-  background: rgba(7, 18, 12, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-}
-
-.status-chip i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--mint);
-}
-
-.status-chip.is-live i {
-  background: var(--lime);
-  box-shadow: 0 0 8px rgba(183, 227, 107, 0.8);
-}
-
-.status-chip.is-paused i {
-  background: #E8B75A;
-}
-
-.status-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.status-lines:empty {
-  display: none;
-}
-
-.status-line {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.55rem 0.8rem;
-  border-radius: 12px;
-  font-size: 0.86rem;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.status-line span {
-  color: var(--sage);
-  flex-shrink: 0;
-}
-
-.status-line strong {
-  font-weight: 600;
-  color: var(--cream);
-  text-align: right;
-}
-
-.modal-section[hidden] {
-  display: none;
 }
 
 /* Bento Grid */
@@ -1087,6 +988,24 @@ main.container {
   position: relative;
 }
 
+.project-card {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.project-card .project-year {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  padding: 0.25rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(10, 24, 16, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  color: var(--cream);
+}
+
 .project-thumb svg {
   width: 100%;
   height: 100%;
@@ -1278,14 +1197,14 @@ main.container {
 
 .anime-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
 .anime-card {
-  position: relative;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .anime-card:hover {
@@ -1294,12 +1213,11 @@ main.container {
 }
 
 .anime-cover {
-  position: absolute;
-  inset: 0;
+  aspect-ratio: 16 / 9;
+  position: relative;
   display: flex;
-  align-items: flex-start;
-  gap: 0.4rem;
-  padding: 0.7rem;
+  align-items: flex-end;
+  padding: 0.75rem;
   overflow: hidden;
 }
 
@@ -1340,23 +1258,14 @@ main.container {
 }
 
 .anime-body {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  padding: 2.2rem 0.9rem 0.8rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  background: linear-gradient(to top, rgba(7, 18, 12, 0.92) 0%, rgba(7, 18, 12, 0.6) 55%, transparent 100%);
+  gap: 0.35rem;
+  flex: 1;
 }
 
 .anime-title {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   font-size: 1rem;
   font-weight: 600;
   color: var(--cream);
@@ -1375,7 +1284,7 @@ main.container {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 24, 16, 0.25), transparent 50%);
+  background: linear-gradient(to top, rgba(10, 24, 16, 0.7), transparent 55%);
   pointer-events: none;
 }
 
@@ -1384,19 +1293,11 @@ main.container {
 }
 
 .anime-type {
-  position: relative;
-  z-index: 1;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cream);
-  background: rgba(7, 18, 12, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  color: var(--lime);
 }
 
 .anime-rating {
@@ -1409,11 +1310,7 @@ main.container {
 }
 
 .anime-note {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   color: var(--mint);
   opacity: 0.88;
   line-height: 1.45;
@@ -2006,6 +1903,12 @@ main.container {
   height: 100%;
 }
 
+.modal-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .modal-body {
   display: flex;
   flex-direction: column;
@@ -2339,30 +2242,6 @@ main.container {
 
 .project-thumb{position:relative}
 .project-thumb .project-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-
-/* ==========================================================================
-   CARD SIZE CONTROLS — edit these values to resize cards site-wide
-   ========================================================================== */
-:root {
-  --works-card-width: 400px;      /* desktop width of each project card */
-  --works-thumb-ratio: 16 / 9;    /* project image shape (width / height) */
-  --works-gap: 1.5rem;
-  --anime-card-ratio: 4 / 3;      /* anime card shape; try 2 / 3 for posters */
-  --anime-cols-mobile: 1;
-  --anime-cols-tablet: 3;
-  --anime-cols-desktop: 4;
-  --anime-gap: 1.25rem;
-}
-.project-thumb { aspect-ratio: var(--works-thumb-ratio); }
-.project-logo { object-fit: cover; }
-.anime-card { aspect-ratio: var(--anime-card-ratio); }
-.anime-grid { grid-template-columns: repeat(var(--anime-cols-mobile), 1fr); gap: var(--anime-gap); }
-@media (min-width: 768px) { .anime-grid { grid-template-columns: repeat(var(--anime-cols-tablet), 1fr); } }
-@media (min-width: 1024px) {
-  .anime-grid { grid-template-columns: repeat(var(--anime-cols-desktop), 1fr); }
-  .works-gallery { gap: var(--works-gap); }
-  .project-card { flex: 0 0 var(--works-card-width); }
-}
 </style>
 </head>
 <body data-page="home">
@@ -2512,17 +2391,17 @@ main.container {
             <li class="timeline-item">
               <span class="timeline-marker" aria-hidden="true"></span>
               <div class="timeline-content" contenteditable="true" spellcheck="false" aria-label="Editable log entry 1">
-                <time class="log-date">12 Nov 2026</time>
+                <time class="log-date">15 Nov 2026</time>
                 <span class="log-sep">—</span>
-                <span class="log-text">Practised the grouped-data median method and solving for missing frequencies p and q.</span>
+                <span class="log-text">Started a life with new goals and perspective.</span>
               </div>
             </li>
             <li class="timeline-item">
               <span class="timeline-marker" aria-hidden="true"></span>
               <div class="timeline-content" contenteditable="true" spellcheck="false" aria-label="Editable log entry 2">
-                <time class="log-date">11 Nov 2026</time>
+                <time class="log-date">12 Nov 2026</time>
                 <span class="log-sep">—</span>
-                <span class="log-text">Worked on Class 10 maths, including linear equations and arithmetic progressions.</span>
+                <span class="log-text">Completed Ikigai.</span>
               </div>
             </li>
             <li class="timeline-item">
@@ -2530,7 +2409,7 @@ main.container {
               <div class="timeline-content" contenteditable="true" spellcheck="false" aria-label="Editable log entry 3">
                 <time class="log-date">08 Nov 2026</time>
                 <span class="log-sep">—</span>
-                <span class="log-text">Worked on the World of Wonder MVP and pushed for a more distinctive, textured UI.</span>
+                <span class="log-text">Bought Ikigai.</span>
               </div>
             </li>
           </ul>
@@ -2556,7 +2435,7 @@ main.container {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </span>
-                <span class="check-text">Prepare for CBSE Class 10 boards.</span>
+                <span class="check-text">Build up to v7 of BEAMHERMITS by the year end.</span>
               </label>
             </li>
             <li class="checklist-item">
@@ -2567,7 +2446,7 @@ main.container {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </span>
-                <span class="check-text">Build the Nodebase V4 foundation.</span>
+                <span class="check-text">Complete 5 books.</span>
               </label>
             </li>
             <li class="checklist-item">
@@ -2578,18 +2457,7 @@ main.container {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </span>
-                <span class="check-text">Ship the World of Wonder MVP.</span>
-              </label>
-            </li>
-            <li class="checklist-item">
-              <label class="check-label">
-                <input type="checkbox" class="check-input" data-task-id="task-4" />
-                <span class="check-box" aria-hidden="true">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </span>
-                <span class="check-text">Improve English fluency and coding skills.</span>
+                <span class="check-text">Work on Spytown 🙃 and reach its phase 0.7.</span>
               </label>
             </li>
           </ul>
@@ -2646,7 +2514,8 @@ main.container {
 
         <div class="filter-bar" role="group" aria-label="Filter projects by category">
           <button type="button" class="filter-pill is-active" data-filter="All">All</button>
-          <button type="button" class="filter-pill" data-filter="Open Source">Open Source</button>
+          <button type="button" class="filter-pill" data-filter="Web">Web</button>
+          <button type="button" class="filter-pill" data-filter="Design">Design</button>
           <button type="button" class="filter-pill" data-filter="Other">Other</button>
         </div>
       </section>
@@ -2939,14 +2808,12 @@ main.container {
       <div class="modal-body">
         <p class="modal-desc" id="modalProjectDesc"></p>
 
-        <div class="status-lines" id="modalProjectStatus"></div>
-
-        <div class="modal-section" id="modalTechSection">
+        <div class="modal-section">
           <h3 class="modal-label">Technologies &amp; Craft</h3>
           <div class="pill-group" id="modalProjectTech"></div>
         </div>
 
-        <div class="modal-section" id="modalLinksSection">
+        <div class="modal-section">
           <div class="modal-label-row">
             <h3 class="modal-label">Project Links</h3>
             <span class="edit-hint">Click URLs to edit</span>
@@ -3016,136 +2883,218 @@ const MUSIC_PLAYLIST = [
 
 const PROJECTS_DATA = [
   {
-    "id": "nodebase",
-    "title": "Nodebase",
-    "year": "",
-    "shortDesc": "Free, open-source project.",
-    "extendedDesc": "A free, open-source project.",
-    "categories": [
-      "Open Source"
+    id: "personal-portfolio",
+    title: "VISHWAKESH — Personal Website",
+    year: '2026',
+    shortDesc: "My personal digital identity",
+    extendedDesc:
+      "A personal website to present my identity, projects, and interests. The design direction includes minimal glassmorphism, a green-leaf theme, multiple pages, and a shared music-player control.",
+    categories: ["Web", "Design"],
+    tech: ["HTML", "CSS", "JavaScript", "Vite", "Supabase"],
+    links: [
+      { label: "Website", url: "#" }
     ],
-    "tech": [],
-    "progress": "v4.5",
-    "workStatus": "working on",
-    "status": null,
-    "logo": "https://plain-apac-prod-public.komododecks.com/202611/13/5C65LAUWoobvVfkd0PtB/image.png",
-    "links": [
-      {
-        "label": "GitHub",
-        "url": "https://github.com/vishwakesh/nodebase"
-      }
-    ]
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <defs>
+          <linearGradient id="portGrad" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1F4A35"/>
+            <stop offset="100%" stop-color="#0F2117"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#portGrad)"/>
+        <rect x="95" y="60" width="210" height="130" rx="16" stroke="#B7E36B" stroke-width="2" fill="rgba(255,255,255,0.05)"/><path d="M95 95H305" stroke="#B7E36B" stroke-opacity="0.5" stroke-width="2"/><circle cx="115" cy="78" r="4" fill="#B7E36B"/><circle cx="130" cy="78" r="4" fill="#A8C3A0"/><rect x="118" y="115" width="90" height="10" rx="5" fill="#B7E36B" fill-opacity="0.6"/><rect x="118" y="137" width="140" height="8" rx="4" fill="#DDEBD9" fill-opacity="0.3"/>
+      </svg>`
   },
   {
-    "id": "world-of-wonder",
-    "title": "World of Wonder",
-    "year": "",
-    "shortDesc": "Place-discovery project in planning.",
-    "extendedDesc": "A project focused on discovering interesting places around the world.",
-    "categories": [
-      "Other"
+    id: "world-of-wonder",
+    image: "https://kommodo.ai/i/PpLXMDowsoGdW5rq8fpS",
+    title: "World of Wonder",
+    year: '2026',
+    shortDesc: "Discover the world’s hidden wonders",
+    extendedDesc:
+      "A community-powered platform for discovering underrated places around the world. Its hybrid discovery and social experience combines an image feed, interactive map, destination pages, search, authentication, and saved collections.",
+    categories: ["Web", "Design"],
+    tech: ["MapLibre", "Supabase", "MongoDB"],
+    links: [
+      { label: "Project website", url: "#" }
     ],
-    "tech": [],
-    "progress": "Planning",
-    "workStatus": "paused for 7 days",
-    "status": null,
-    "pausedUntil": "2026-11-27T00:00:00",
-    "logo": "https://plain-apac-prod-public.komododecks.com/202611/13/PpLXMDowsoGdW5rq8fpS/image.png",
-    "links": []
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <defs>
+          <linearGradient id="wowSky" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#356859"/>
+            <stop offset="55%" stop-color="#6DA382"/>
+            <stop offset="100%" stop-color="#1A3526"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#wowSky)"/>
+        <circle cx="295" cy="68" r="34" fill="#F6F8F2" fill-opacity="0.32"/>
+        <path d="M0 185L95 105L175 168L265 92L400 195V250H0V185Z" fill="#1F422E"/>
+        <path d="M0 205L120 138L215 198L310 132L400 205V250H0V205Z" fill="#142B1E"/>
+        <path d="M180 250C195 215 215 198 242 186" stroke="#B7E36B" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>`
   },
   {
-    "id": "spytown",
-    "title": "SPYTOWN",
-    "year": "",
-    "shortDesc": "Anime video clipping project.",
-    "extendedDesc": "An anime-focused video clipping project.",
-    "categories": [
-      "Other"
+    id: "spytown",
+    image: "https://kommodo.ai/i/ojISnZpcWUg4InBKeAg9",
+    title: "SPYTOWN.FUN",
+    year: '2026',
+    shortDesc: "Anime-first AI video clipping",
+    extendedDesc:
+      "An AI-powered, anime-first video clipping platform. The planned system includes source-video processing, credit-based clipping, Cloudflare R2 storage, and FFmpeg integration.",
+    categories: ["Web", "Other"],
+    tech: ["Rust", "Axum", "SQLite", "Cloudflare R2", "FFmpeg"],
+    links: [
+      { label: "Project website", url: "#" }
     ],
-    "tech": [],
-    "progress": "Waiting for investors; adding clips whenever possible.",
-    "workStatus": "finished",
-    "status": "Development marked as finished; currently awaiting investment and continuing to add clips.",
-    "logo": "https://plain-apac-prod-public.komododecks.com/202611/13/ojISnZpcWUg4InBKeAg9/image.png",
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://spytown.fun/"
-      }
-    ]
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <defs>
+          <linearGradient id="spyGrad" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1E3D2F"/>
+            <stop offset="100%" stop-color="#0E1F16"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#spyGrad)"/>
+        <circle cx="200" cy="125" r="76" stroke="#B7E36B" stroke-width="1.5" stroke-opacity="0.35"/>
+        <path d="M128 125C152 94 248 94 272 125C248 156 152 156 128 125Z" fill="#2A5840" stroke="#B7E36B" stroke-width="2"/>
+        <circle cx="200" cy="125" r="22" fill="#102319"/>
+        <circle cx="207" cy="118" r="6" fill="#B7E36B"/>
+        <path d="M55 60H95M55 190H95M305 60H345M305 190H345" stroke="#DDEBD9" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+      </svg>`
   },
   {
-    "id": "quasar",
-    "title": "Quasar",
-    "year": "",
-    "shortDesc": "Project in planning stage.",
-    "extendedDesc": "Project details to be added.",
-    "categories": [
-      "Other"
+    id: "quasar",
+    image: "https://kommodo.ai/i/Bq0V4qTqBnUofgIGv8YK",
+    title: "QUASAR",
+    year: '2026',
+    shortDesc: "AI-powered Discord management",
+    extendedDesc:
+      "An AI-powered Discord server management and automation concept for businesses and communities, previously developed under the name TANDEM. Its direction includes specialist AI roles, server knowledge bases, team workspaces, and support-ticket workflows.",
+    categories: ["Web", "Other"],
+    tech: ["Rust", "Axum", "Discord", "AI"],
+    links: [
+      { label: "Project website", url: "#" }
     ],
-    "tech": [],
-    "progress": "Planning",
-    "workStatus": "offline",
-    "status": null,
-    "logo": "https://plain-apac-prod-public.komododecks.com/202611/13/Bq0V4qTqBnUofgIGv8YK/image.png",
-    "links": []
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <defs>
+          <linearGradient id="quaGrad" x1="0" y1="250" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#13281D"/>
+            <stop offset="50%" stop-color="#2D5A42"/>
+            <stop offset="100%" stop-color="#4A8A62"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#quaGrad)"/>
+        <polygon points="200,42 232,108 298,125 232,142 200,208 168,142 102,125 168,108" fill="#B7E36B" fill-opacity="0.22" stroke="#B7E36B" stroke-width="2"/>
+        <circle cx="200" cy="125" r="16" fill="#B7E36B"/>
+      </svg>`
   },
   {
-    "id": "quxo",
-    "title": "Quxo",
-    "year": "",
-    "shortDesc": "Creative & digital services agency.",
-    "extendedDesc": "A creative and digital services project.",
-    "categories": [
-      "Other"
+    id: "vocanovi",
+    title: "Vocanovi",
+    year: '2026',
+    shortDesc: "A personal English fluency platform",
+    extendedDesc:
+      "A premium English-learning app focused on vocabulary, recall, grammar, and practical communication. Its planned features include an adaptive coach, progress reports, an error notebook, tests, and Vocanovi Everywhere.",
+    categories: ["Web", "Design", "Other"],
+    tech: ["Rust", "Python", "Supabase", "Cloudflare R2"],
+    links: [
+      { label: "Project website", url: "#" }
     ],
-    "tech": [],
-    "progress": "Finished",
-    "workStatus": "finished",
-    "status": "Paused until the date originally provided: 2026-01-15.",
-    "logo": "https://plain-apac-prod-public.komododecks.com/202611/13/4LyRTt604HPam73zJd0Q/image.png",
-    "links": [
-      {
-        "label": "Website",
-        "url": "https://www.quxoagency.xyz/"
-      }
-    ]
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <defs>
+          <linearGradient id="vocGrad" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1B3644"/>
+            <stop offset="60%" stop-color="#2E5B4E"/>
+            <stop offset="100%" stop-color="#14291D"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#vocGrad)"/>
+        <circle cx="315" cy="58" r="22" fill="#B7E36B" fill-opacity="0.28"/>
+        <rect x="46" y="128" width="26" height="92" rx="4" fill="#13281E"/>
+        <rect x="82" y="102" width="32" height="118" rx="4" fill="#193528"/>
+        <rect x="124" y="84" width="28" height="136" rx="4" fill="#214634"/>
+        <rect x="164" y="114" width="38" height="106" rx="4" fill="#163023"/>
+        <rect x="214" y="96" width="30" height="124" rx="4" fill="#1E402F"/>
+        <rect x="256" y="122" width="34" height="98" rx="4" fill="#14291E"/>
+        <path d="M0 218H400V250H0V218Z" fill="#0F2117"/>
+        <path d="M90 66C135 46 185 46 230 66" stroke="#B7E36B" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>`
   },
   {
-    "id": "apicmc",
-    "title": "APICMC",
-    "year": "",
-    "shortDesc": "Minecraft multiplayer server.",
-    "extendedDesc": "A Minecraft multiplayer server project. Development is complete, but the project is paused because the owners could no longer cover the bills.",
-    "categories": [
-      "Other"
+    id: "beamhermits",
+    image: "https://kommodo.ai/i/ZuRtiXLJWMaTj65GjJry",
+    title: "BEAMHERMITS",
+    year: '2026',
+    shortDesc: "Self-hosted tools for creators",
+    extendedDesc:
+      "A mobile-friendly, self-hosted platform combining Discord bot hosting with personal file-cloud functionality. The V4 direction includes multi-tenant infrastructure, a web panel, and Docker-based bot execution.",
+    categories: ["Web", "Other"],
+    tech: ["React", "TypeScript", "Vite", "Fastify", "Docker"],
+    links: [
+      { label: "GitHub", url: "https://github.com/vishwakesh/beamhermit.git" }
     ],
-    "tech": [
-      "Minecraft"
-    ],
-    "progress": "Done",
-    "workStatus": "done",
-    "status": "Paused because the owners could no longer cover the bills.",
-    "logo": "https://plain-apac-prod-public.komododecks.com/202611/13/E3ATrsYors7tZFmiDIKO/image.png",
-    "links": []
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <rect width="400" height="250" fill="#162F21"/>
+        <circle cx="120" cy="95" r="18" fill="#3E7B4F" stroke="#B7E36B" stroke-width="2"/>
+        <circle cx="280" cy="95" r="18" fill="#3E7B4F" stroke="#B7E36B" stroke-width="2"/>
+        <circle cx="200" cy="172" r="20" fill="#264D36" stroke="#B7E36B" stroke-width="2"/>
+        <path d="M136 104L184 158M264 104L216 158M138 95H262" stroke="#A8C3A0" stroke-width="2" stroke-dasharray="5 5"/>
+      </svg>`
   },
   {
-    "id": "vkmc",
-    "title": "VKMC",
-    "year": "",
-    "shortDesc": "Minecraft multiplayer server.",
-    "extendedDesc": "A Minecraft multiplayer server project that generated $500. It is currently in maintenance mode because its API credits have run out.",
-    "categories": [
-      "Other"
+    id: "quxo",
+    image: "https://kommodo.ai/i/4LyRTt604HPam73zJd0Q",
+    title: "Quxo",
+    year: '2026',
+    shortDesc: "Editing and AI-coding services",
+    extendedDesc:
+      "A service-business concept aimed at Indian gaming YouTubers, offering video editing and AI-assisted coding services. It also includes the CLIP STUDIO creative direction with the tagline \"Turn moments into momentum.\"",
+    categories: ["Design", "Other"],
+    tech: ["Motion Design", "Color Grading", "Sound Sync", "Brand Identity"],
+    links: [
+      { label: "Website", url: "#" }
     ],
-    "tech": [
-      "Minecraft"
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <defs>
+          <linearGradient id="quxGrad" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#264B35"/>
+            <stop offset="100%" stop-color="#112419"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#quxGrad)"/>
+        <rect x="85" y="65" width="230" height="120" rx="22" stroke="#B7E36B" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
+        <polygon points="184,102 228,125 184,148" fill="#B7E36B"/>
+      </svg>`
+  },
+  {
+    id: "cyber-beans-assignment",
+    title: "Cyber Beans — HTML Assignment",
+    year: '2026',
+    shortDesc: "A collection of school web pages",
+    extendedDesc:
+      "A Class 10 Computer Applications assignment planned as 15 simple web pages: 10 using HTML alone and 5 combining HTML and CSS. The pages include forms, tables, video, colours, and a small Attack on Titan-inspired theme.",
+    categories: ["Web"],
+    tech: ["HTML", "CSS", "HTML Forms", "HTML Tables", "HTML Video"],
+    links: [
+      { label: "Project files", url: "#" }
     ],
-    "progress": "$500 earned",
-    "workStatus": "S6 on 2026-12-01",
-    "status": "In maintenance mode because API credits have run out.",
-    "logo": "https://plain-apac-prod-public.komododecks.com/202611/13/606JNNb3WADg9bUytILY/image.png",
-    "links": []
+    thumbSvg: `
+      <svg viewBox="0 0 400 250" fill="none">
+        <defs>
+          <linearGradient id="cybGrad" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1B3644"/>
+            <stop offset="100%" stop-color="#14291D"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="250" fill="url(#cybGrad)"/>
+        <path d="M150 100L110 125L150 150M250 100L290 125L250 150" stroke="#B7E36B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M225 82L175 168" stroke="#DDEBD9" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+      </svg>`
   }
 ];
 
@@ -3155,7 +3104,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/qfSIOe3vC7G2ASbhahFV/image.jpg",
+    image: "https://kommodo.ai/i/qfSIOe3vC7G2ASbhahFV",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3164,7 +3113,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/qZgUVZ5js1XXdlKQpjja/image.jpg",
+    image: "https://kommodo.ai/i/qZgUVZ5js1XXdlKQpjja",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   },
@@ -3172,8 +3121,8 @@ const ANIME_DATA = [
     title: "Demon Slayer",
     type: "Series",
     status: "Watching",
-    note: "Anime watched up to the Infinity Castle arc; manga read through the Sunrise Countdown arc.",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/PvfYAIvrWiYwKB97kYYU/image.jpg",
+    note: "Anime: watched up to the Infinity Castle arc. Manga: completed the Sunrise Countdown arc.",
+    image: "https://kommodo.ai/i/PvfYAIvrWiYwKB97kYYU",
     coverGradient: "linear-gradient(135deg, #264B35 0%, #3E7B4F 60%, #112419 100%)",
     themeColor: '#B7E36B'
   },
@@ -3182,16 +3131,16 @@ const ANIME_DATA = [
     type: "Series",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/KWFPnYfuSqswcWeeN3Sz/image.jpg",
+    image: "https://kommodo.ai/i/KWFPnYfuSqswcWeeN3Sz",
     coverGradient: "linear-gradient(135deg, #3E5C3A 0%, #6B7E52 55%, #1E3524 100%)",
     themeColor: '#B7E36B'
   },
   {
     title: "Solo Leveling",
     type: "Series",
-    status: "Watching",
-    note: "Watched 2 anime seasons; manga read through the story of Sung Jinwoo's son. Details are a little hazy.",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/NKGoeB6SIFXroElNqSPW/image.jpg",
+    status: "Completed",
+    note: "Anime: watched both seasons. Manga: read through the storyline involving Sung Jinwoo's son. Some details are forgotten.",
+    image: "https://kommodo.ai/i/NKGoeB6SIFXroElNqSPW",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3200,7 +3149,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 3, Episode 5",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/h8kZAbQHepxylhg7JcWJ/image.jpg",
+    image: "https://kommodo.ai/i/h8kZAbQHepxylhg7JcWJ",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   },
@@ -3209,7 +3158,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 3, Episode 1",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/YJhiMow9Brz55YQFymmy/image.jpg",
+    image: "https://kommodo.ai/i/YJhiMow9Brz55YQFymmy",
     coverGradient: "linear-gradient(135deg, #264B35 0%, #3E7B4F 60%, #112419 100%)",
     themeColor: '#B7E36B'
   },
@@ -3217,8 +3166,8 @@ const ANIME_DATA = [
     title: "Hunter x Hunter",
     type: "Series",
     status: "Watching",
-    note: "Around Episode 30–40 (exact episode not confirmed)",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/BRI69KOp7ETaBRjRxGsv/image.jpg",
+    note: "Approximately Episode 30–40 (uncertain)",
+    image: "https://kommodo.ai/i/BRI69KOp7ETaBRjRxGsv",
     coverGradient: "linear-gradient(135deg, #3E5C3A 0%, #6B7E52 55%, #1E3524 100%)",
     themeColor: '#B7E36B'
   },
@@ -3227,7 +3176,7 @@ const ANIME_DATA = [
     type: "Movie",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/xaTONi0joRFk2hYAU26e/image.jpg",
+    image: "https://kommodo.ai/i/xaTONi0joRFk2hYAU26e",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3236,7 +3185,7 @@ const ANIME_DATA = [
     type: "Movie",
     status: "Completed",
     note: "Completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/xjt2Afa2UJoxmKEX1irk/image.jpg",
+    image: "https://kommodo.ai/i/xjt2Afa2UJoxmKEX1irk",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   },
@@ -3245,7 +3194,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Season 1 completed",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/RSm84TXyYMr6t64ROHTK/image.jpg",
+    image: "https://kommodo.ai/i/RSm84TXyYMr6t64ROHTK",
     coverGradient: "linear-gradient(135deg, #264B35 0%, #3E7B4F 60%, #112419 100%)",
     themeColor: '#B7E36B'
   },
@@ -3253,8 +3202,8 @@ const ANIME_DATA = [
     title: "Haikyu!!",
     type: "Series",
     status: "Watching",
-    note: "Season 1 started but not finished",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/LDIpcaHmbMf1fVv7I4Zm/image.jpg",
+    note: "Season 1 in progress",
+    image: "https://kommodo.ai/i/LDIpcaHmbMf1fVv7I4Zm",
     coverGradient: "linear-gradient(135deg, #3E5C3A 0%, #6B7E52 55%, #1E3524 100%)",
     themeColor: '#B7E36B'
   },
@@ -3262,8 +3211,8 @@ const ANIME_DATA = [
     title: "Classroom of the Elite",
     type: "Series",
     status: "Watching",
-    note: "Watched through Season 2",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/mVZQa4WUvU6hjADfCMFO/image.jpg",
+    note: "Season 2 completed",
+    image: "https://kommodo.ai/i/mVZQa4WUvU6hjADfCMFO",
     coverGradient: "linear-gradient(135deg, #2D4F37 0%, #5B7349 55%, #1A2F21 100%)",
     themeColor: '#B7E36B'
   },
@@ -3272,7 +3221,7 @@ const ANIME_DATA = [
     type: "Series",
     status: "Watching",
     note: "Episode 24 (Muse India)",
-    image: "https://plain-apac-prod-public.komododecks.com/202611/12/s4ClpcZ6wXv7Bc5TTuN3/image.jpg",
+    image: "https://kommodo.ai/i/s4ClpcZ6wXv7Bc5TTuN3",
     coverGradient: "linear-gradient(135deg, #1B3644 0%, #2E5B4E 60%, #14291D 100%)",
     themeColor: '#B7E36B'
   }
@@ -3444,7 +3393,7 @@ function initNavigation() {
 function initHomeInteractions() {
   const checklist = document.getElementById('todoChecklist');
   if (checklist) {
-    const storageKey = 'vishwakesh_checklist_v1';
+    const storageKey = 'vishwakesh_checklist_v2';
     let savedState = {};
 
     try {
@@ -3475,7 +3424,7 @@ function initHomeInteractions() {
 
   const dailyLogList = document.getElementById('dailyLogList');
   if (dailyLogList) {
-    const logStorageKey = 'vishwakesh_daily_log_v1';
+    const logStorageKey = 'vishwakesh_daily_log_v2';
     const entries = dailyLogList.querySelectorAll('.timeline-content');
 
     try {
@@ -3509,52 +3458,6 @@ function initHomeInteractions() {
    -------------------------------------------------------------------------- */
 let activeProjectFilter = 'All';
 
-/* Project helpers: logo thumbnail, status chips, pause countdown */
-function capFirst(text) {
-  return text ? text.charAt(0).toUpperCase() + text.slice(1) : '';
-}
-
-function buildThumb(project) {
-  const initial = (project.title || '?').charAt(0).toUpperCase();
-  const logo = project.logo
-    ? `<img class="project-logo" src="${project.logo}" alt="" loading="lazy" referrerpolicy="no-referrer"
-         onerror="if(this.src.endsWith('.png')){this.src=this.src.replace(/\\.png$/,'.jpg');}else{this.remove();}" />`
-    : '';
-  return `<div class="thumb-fallback" aria-hidden="true"><span>${initial}</span></div>${logo}`;
-}
-
-function statusTone(text) {
-  const t = (text || '').toLowerCase();
-  if (/working|live|season|^s\d/.test(t)) return 'is-live';
-  if (/pause|offline|maintenance|waiting|plan/.test(t)) return 'is-paused';
-  return 'is-done';
-}
-
-function formatCountdown(targetIso) {
-  const diff = new Date(targetIso).getTime() - Date.now();
-  if (diff <= 0) return 'Resumed';
-  const d = Math.floor(diff / 86400000);
-  const hrs = Math.floor((diff % 86400000) / 3600000);
-  const mins = Math.floor((diff % 3600000) / 60000);
-  return `${d}d ${hrs}h ${mins}m left`;
-}
-
-function statusChipHtml(project) {
-  if (!project.workStatus) return '';
-  const timer = project.pausedUntil
-    ? ` · <span data-countdown="${project.pausedUntil}">${formatCountdown(project.pausedUntil)}</span>`
-    : '';
-  const label = project.pausedUntil ? 'Paused' : capFirst(project.workStatus);
-  return `<span class="status-chip ${statusTone(project.workStatus)}"><i aria-hidden="true"></i>${label}${timer}</span>`;
-}
-
-function updateCountdowns() {
-  document.querySelectorAll('[data-countdown]').forEach((el) => {
-    el.textContent = formatCountdown(el.dataset.countdown);
-  });
-}
-setInterval(updateCountdowns, 30000);
-
 function renderProjects(filter = 'All') {
   const gallery = document.getElementById('worksGallery');
   if (!gallery) return;
@@ -3572,17 +3475,17 @@ function renderProjects(filter = 'All') {
         role="listitem"
         tabindex="0"
         data-project-id="${project.id}"
-        aria-label="${project.title}. Click to inspect details."
+        aria-label="${project.title}, ${project.year}. Click to inspect details."
       >
         <div class="project-thumb" aria-hidden="true">
-          ${buildThumb(project)}
+          ${project.thumbSvg}
+        ${project.image ? `<img class="project-img" src="${project.image}" alt="${project.title} preview" loading="lazy" onerror="this.remove()">` : ''}
         </div>
         <div class="project-body">
           <div class="project-meta-top">
             <h2 class="project-title">${project.title}</h2>
-            ${project.year ? `<span class="project-year">${project.year}</span>` : ''}
+            <span class="project-year">${project.year}</span>
           </div>
-          <div class="status-row">${statusChipHtml(project)}</div>
           <p class="project-desc">${project.shortDesc}</p>
           <div class="project-footer">
             <div class="pill-group">
@@ -3599,8 +3502,6 @@ function renderProjects(filter = 'All') {
       </article>`
     )
     .join('');
-
-  updateCountdowns();
 
   gallery.querySelectorAll('.project-card').forEach((card) => {
     const openHandler = () => {
@@ -3648,25 +3549,18 @@ function openProjectModal(projectId, triggerElement) {
 
   lastTriggerCard = triggerElement || document.activeElement;
 
-  document.getElementById('modalProjectYear').textContent = project.year || '';
+  document.getElementById('modalProjectYear').textContent = project.year;
   document.getElementById('modalProjectTitle').textContent = project.title;
-  document.getElementById('modalProjectThumb').innerHTML = buildThumb(project);
+  const modalThumb = document.getElementById('modalProjectThumb');
+  modalThumb.innerHTML = project.image
+    ? `<img src="${project.image}" alt="${project.title} preview" loading="lazy">`
+    : project.thumbSvg;
+  if (project.image) {
+    modalThumb.querySelector('img')?.addEventListener('error', () => {
+      modalThumb.innerHTML = project.thumbSvg;
+    }, { once: true });
+  }
   document.getElementById('modalProjectDesc').textContent = project.extendedDesc;
-
-  const statusRows = [
-    ['Progress', project.progress ? capFirst(project.progress) : ''],
-    ['Work status', project.pausedUntil
-      ? `Paused · <span data-countdown="${project.pausedUntil}">${formatCountdown(project.pausedUntil)}</span>`
-      : capFirst(project.workStatus || '')],
-    ['Note', project.status || '']
-  ].filter((row) => row[1]);
-  document.getElementById('modalProjectStatus').innerHTML = statusRows
-    .map((row) => `<div class="status-line"><span>${row[0]}</span><strong>${row[1]}</strong></div>`)
-    .join('');
-  updateCountdowns();
-
-  document.getElementById('modalTechSection').hidden = !project.tech.length;
-  document.getElementById('modalLinksSection').hidden = !project.links.length;
 
   document.getElementById('modalProjectTech').innerHTML = project.tech
     .map((item) => `<span class="pill">${item}</span>`)
@@ -3844,11 +3738,11 @@ function renderAnimeGrid() {
               <path d="M0 140C55 110 115 125 170 105C205 92 225 98 240 108V180H0V140Z" fill="#102318" fill-opacity="0.65"/>
             </svg>
             <span class="status-badge ${statusClass}">${anime.status}</span>
-            ${anime.type ? `<span class="anime-type">${anime.type}</span>` : ''}
           </div>
           <div class="anime-body">
             <h2 class="anime-title">${anime.title}</h2>
-            ${anime.note && anime.note !== anime.status ? `<p class="anime-note">${anime.note}</p>` : ''}
+            <div class="anime-type">${anime.type || ''}</div>
+            <p class="anime-note">${anime.note}</p>
           </div>
         </article>`;
     })
@@ -4350,32 +4244,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 })();
 
-/* ---------- Profile picture: random on every load, changeable from the music card ---------- */
-(function initRandomPfp() {
-  const pics = window.__PFP_IMAGES || [];
-  const img = document.getElementById('heroPfp');
-  if (!img || !pics.length) return;
-
-  let current = Math.floor(Math.random() * pics.length);
-  try {
-    const last = parseInt(localStorage.getItem('pfpLastIndex'), 10);
-    if (pics.length > 1 && current === last) current = (current + 1) % pics.length;
-    localStorage.setItem('pfpLastIndex', String(current));
-  } catch (e) { /* storage unavailable: random pick is enough */ }
-
-  img.src = pics[current];
-
-  window.changePfp = function changePfp() {
-    current = (current + 1) % pics.length;
-    try { localStorage.setItem('pfpLastIndex', String(current)); } catch (e) {}
-    img.classList.add('is-fading');
-    setTimeout(() => {
-      img.src = pics[current];
-      img.classList.remove('is-fading');
-    }, 250);
-  };
-})();
-
 /* ---------- Idols page: content lives in idols.json, loaded on first visit ---------- */
 (function initIdolsPage() {
   const view = document.getElementById('view-idols');
@@ -4581,6 +4449,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const maybe = () => { if (!view.hidden && !started) load(); };
   new MutationObserver(maybe).observe(view, { attributes: true, attributeFilter: ['hidden'] });
   maybe();
+})();
+
+/* ---------- Profile picture: random on every load, changeable from the music card ---------- */
+(function initRandomPfp() {
+  const pics = window.__PFP_IMAGES || [];
+  const img = document.getElementById('heroPfp');
+  if (!img || !pics.length) return;
+
+  let current = Math.floor(Math.random() * pics.length);
+  try {
+    const last = parseInt(localStorage.getItem('pfpLastIndex'), 10);
+    if (pics.length > 1 && current === last) current = (current + 1) % pics.length;
+    localStorage.setItem('pfpLastIndex', String(current));
+  } catch (e) { /* storage unavailable: random pick is enough */ }
+
+  img.src = pics[current];
+
+  window.changePfp = function changePfp() {
+    current = (current + 1) % pics.length;
+    try { localStorage.setItem('pfpLastIndex', String(current)); } catch (e) {}
+    img.classList.add('is-fading');
+    setTimeout(() => {
+      img.src = pics[current];
+      img.classList.remove('is-fading');
+    }, 250);
+  };
 })();
 </script>
 </body>
