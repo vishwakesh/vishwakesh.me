@@ -156,14 +156,14 @@
   ],
   "projects": [
     {
-      "id": "beamhermits",
-      "title": "BEAMHERMITS",
+      "id": "nodebase",
+      "title": "Nodebase",
       "description": "A free, open-source project.",
       "progress": "v4.5",
       "workStatus": "in_progress",
       "statusText": "Currently working on it.",
-      "links": [{ "label": "GitHub", "url": "https://github.com/vishwakesh/beamhermit.git" }],
-      "imageUrl": "https://kommodo.ai/i/ZuRtiXLJWMaTj65GjJry"
+      "links": [{ "label": "GitHub", "url": "https://github.com/vishwakesh/nodebase" }],
+      "imageUrl": "https://kommodo.ai/i/5C65LAUWoobvVfkd0PtB"
     },
     {
       "id": "world-of-wonder",
